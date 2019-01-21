@@ -1,0 +1,4 @@
+E:\asp\HR\HR\bin\HR.dll
+E:\asp\HR\HR\bin\HR.pdb
+E:\asp\HR\HR\obj\Debug\HR.dll
+E:\asp\HR\HR\obj\Debug\HR.pdb

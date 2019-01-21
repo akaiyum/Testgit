@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hrModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="hrEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_applicant_personal" EntityType="hrModel.tbl_applicant_personal" />
+    <EntitySet Name="tbl_department" EntityType="hrModel.tbl_department" />
+    <EntitySet Name="tbl_grad" EntityType="hrModel.tbl_grad" />
+    <EntitySet Name="tbl_hsc" EntityType="hrModel.tbl_hsc" />
+    <EntitySet Name="tbl_mas" EntityType="hrModel.tbl_mas" />
+    <EntitySet Name="tbl_ssc" EntityType="hrModel.tbl_ssc" />
+    <AssociationSet Name="FK__tbl_grad__grad_f__2B0A656D" Association="hrModel.FK__tbl_grad__grad_f__2B0A656D">
+      <End Role="tbl_applicant_personal" EntitySet="tbl_applicant_personal" />
+      <End Role="tbl_grad" EntitySet="tbl_grad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_hsc__hsc_fk___2645B050" Association="hrModel.FK__tbl_hsc__hsc_fk___2645B050">
+      <End Role="tbl_applicant_personal" EntitySet="tbl_applicant_personal" />
+      <End Role="tbl_hsc" EntitySet="tbl_hsc" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_mas__mas_fk___2FCF1A8A" Association="hrModel.FK__tbl_mas__mas_fk___2FCF1A8A">
+      <End Role="tbl_applicant_personal" EntitySet="tbl_applicant_personal" />
+      <End Role="tbl_mas" EntitySet="tbl_mas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_ssc__ssc_fk___2180FB33" Association="hrModel.FK__tbl_ssc__ssc_fk___2180FB33">
+      <End Role="tbl_applicant_personal" EntitySet="tbl_applicant_personal" />
+      <End Role="tbl_ssc" EntitySet="tbl_ssc" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_applicant_personal">
+    <Key>
+      <PropertyRef Name="ap_id" />
+    </Key>
+    <Property Name="ap_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ap_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ap_password" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ap_cninc" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ap_phone1" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ap_phone2" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ap_email" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="ap_image" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ap_gender" Type="Int32" />
+    <Property Name="ap_dob" Type="DateTime" />
+    <NavigationProperty Name="tbl_grad" Relationship="hrModel.FK__tbl_grad__grad_f__2B0A656D" FromRole="tbl_applicant_personal" ToRole="tbl_grad" />
+    <NavigationProperty Name="tbl_hsc" Relationship="hrModel.FK__tbl_hsc__hsc_fk___2645B050" FromRole="tbl_applicant_personal" ToRole="tbl_hsc" />
+    <NavigationProperty Name="tbl_mas" Relationship="hrModel.FK__tbl_mas__mas_fk___2FCF1A8A" FromRole="tbl_applicant_personal" ToRole="tbl_mas" />
+    <NavigationProperty Name="tbl_ssc" Relationship="hrModel.FK__tbl_ssc__ssc_fk___2180FB33" FromRole="tbl_applicant_personal" ToRole="tbl_ssc" />
+  </EntityType>
+  <EntityType Name="tbl_department">
+    <Key>
+      <PropertyRef Name="dept_id" />
+    </Key>
+    <Property Name="dept_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dept_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_grad">
+    <Key>
+      <PropertyRef Name="grad_id" />
+    </Key>
+    <Property Name="grad_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="grad_percentage" Type="Double" />
+    <Property Name="grad_institute" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="grad_doc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="grad_fk_ap_id" Type="Int32" />
+    <NavigationProperty Name="tbl_applicant_personal" Relationship="hrModel.FK__tbl_grad__grad_f__2B0A656D" FromRole="tbl_grad" ToRole="tbl_applicant_personal" />
+  </EntityType>
+  <EntityType Name="tbl_hsc">
+    <Key>
+      <PropertyRef Name="hsc_id" />
+    </Key>
+    <Property Name="hsc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hsc_percentage" Type="Double" />
+    <Property Name="hsc_institute" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="hsc_doc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="hsc_fk_ap_id" Type="Int32" />
+    <NavigationProperty Name="tbl_applicant_personal" Relationship="hrModel.FK__tbl_hsc__hsc_fk___2645B050" FromRole="tbl_hsc" ToRole="tbl_applicant_personal" />
+  </EntityType>
+  <EntityType Name="tbl_mas">
+    <Key>
+      <PropertyRef Name="mas_id" />
+    </Key>
+    <Property Name="mas_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mas_percentage" Type="Double" />
+    <Property Name="mas_institute" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="mas_doc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="mas_fk_ap_id" Type="Int32" />
+    <NavigationProperty Name="tbl_applicant_personal" Relationship="hrModel.FK__tbl_mas__mas_fk___2FCF1A8A" FromRole="tbl_mas" ToRole="tbl_applicant_personal" />
+  </EntityType>
+  <EntityType Name="tbl_ssc">
+    <Key>
+      <PropertyRef Name="ssc_id" />
+    </Key>
+    <Property Name="ssc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ssc_percentage" Type="Double" />
+    <Property Name="ssc_institute" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ssc_doc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ssc_fk_ap_id" Type="Int32" />
+    <NavigationProperty Name="tbl_applicant_personal" Relationship="hrModel.FK__tbl_ssc__ssc_fk___2180FB33" FromRole="tbl_ssc" ToRole="tbl_applicant_personal" />
+  </EntityType>
+  <Association Name="FK__tbl_grad__grad_f__2B0A656D">
+    <End Role="tbl_applicant_personal" Type="hrModel.tbl_applicant_personal" Multiplicity="0..1" />
+    <End Role="tbl_grad" Type="hrModel.tbl_grad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_applicant_personal">
+        <PropertyRef Name="ap_id" />
+      </Principal>
+      <Dependent Role="tbl_grad">
+        <PropertyRef Name="grad_fk_ap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_hsc__hsc_fk___2645B050">
+    <End Role="tbl_applicant_personal" Type="hrModel.tbl_applicant_personal" Multiplicity="0..1" />
+    <End Role="tbl_hsc" Type="hrModel.tbl_hsc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_applicant_personal">
+        <PropertyRef Name="ap_id" />
+      </Principal>
+      <Dependent Role="tbl_hsc">
+        <PropertyRef Name="hsc_fk_ap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_mas__mas_fk___2FCF1A8A">
+    <End Role="tbl_applicant_personal" Type="hrModel.tbl_applicant_personal" Multiplicity="0..1" />
+    <End Role="tbl_mas" Type="hrModel.tbl_mas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_applicant_personal">
+        <PropertyRef Name="ap_id" />
+      </Principal>
+      <Dependent Role="tbl_mas">
+        <PropertyRef Name="mas_fk_ap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_ssc__ssc_fk___2180FB33">
+    <End Role="tbl_applicant_personal" Type="hrModel.tbl_applicant_personal" Multiplicity="0..1" />
+    <End Role="tbl_ssc" Type="hrModel.tbl_ssc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_applicant_personal">
+        <PropertyRef Name="ap_id" />
+      </Principal>
+      <Dependent Role="tbl_ssc">
+        <PropertyRef Name="ssc_fk_ap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hrModelStoreContainer" CdmEntityContainer="hrEntities">
+    <EntitySetMapping Name="tbl_applicant_personal">
+      <EntityTypeMapping TypeName="hrModel.tbl_applicant_personal">
+        <MappingFragment StoreEntitySet="tbl_applicant_personal">
+          <ScalarProperty Name="ap_id" ColumnName="ap_id" />
+          <ScalarProperty Name="ap_name" ColumnName="ap_name" />
+          <ScalarProperty Name="ap_password" ColumnName="ap_password" />
+          <ScalarProperty Name="ap_cninc" ColumnName="ap_cninc" />
+          <ScalarProperty Name="ap_phone1" ColumnName="ap_phone1" />
+          <ScalarProperty Name="ap_phone2" ColumnName="ap_phone2" />
+          <ScalarProperty Name="ap_email" ColumnName="ap_email" />
+          <ScalarProperty Name="ap_image" ColumnName="ap_image" />
+          <ScalarProperty Name="ap_gender" ColumnName="ap_gender" />
+          <ScalarProperty Name="ap_dob" ColumnName="ap_dob" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_department">
+      <EntityTypeMapping TypeName="hrModel.tbl_department">
+        <MappingFragment StoreEntitySet="tbl_department">
+          <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+          <ScalarProperty Name="dept_name" ColumnName="dept_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_grad">
+      <EntityTypeMapping TypeName="hrModel.tbl_grad">
+        <MappingFragment StoreEntitySet="tbl_grad">
+          <ScalarProperty Name="grad_id" ColumnName="grad_id" />
+          <ScalarProperty Name="grad_percentage" ColumnName="grad_percentage" />
+          <ScalarProperty Name="grad_institute" ColumnName="grad_institute" />
+          <ScalarProperty Name="grad_doc" ColumnName="grad_doc" />
+          <ScalarProperty Name="grad_fk_ap_id" ColumnName="grad_fk_ap_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_hsc">
+      <EntityTypeMapping TypeName="hrModel.tbl_hsc">
+        <MappingFragment StoreEntitySet="tbl_hsc">
+          <ScalarProperty Name="hsc_id" ColumnName="hsc_id" />
+          <ScalarProperty Name="hsc_percentage" ColumnName="hsc_percentage" />
+          <ScalarProperty Name="hsc_institute" ColumnName="hsc_institute" />
+          <ScalarProperty Name="hsc_doc" ColumnName="hsc_doc" />
+          <ScalarProperty Name="hsc_fk_ap_id" ColumnName="hsc_fk_ap_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_mas">
+      <EntityTypeMapping TypeName="hrModel.tbl_mas">
+        <MappingFragment StoreEntitySet="tbl_mas">
+          <ScalarProperty Name="mas_id" ColumnName="mas_id" />
+          <ScalarProperty Name="mas_percentage" ColumnName="mas_percentage" />
+          <ScalarProperty Name="mas_institute" ColumnName="mas_institute" />
+          <ScalarProperty Name="mas_doc" ColumnName="mas_doc" />
+          <ScalarProperty Name="mas_fk_ap_id" ColumnName="mas_fk_ap_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ssc">
+      <EntityTypeMapping TypeName="hrModel.tbl_ssc">
+        <MappingFragment StoreEntitySet="tbl_ssc">
+          <ScalarProperty Name="ssc_id" ColumnName="ssc_id" />
+          <ScalarProperty Name="ssc_percentage" ColumnName="ssc_percentage" />
+          <ScalarProperty Name="ssc_institute" ColumnName="ssc_institute" />
+          <ScalarProperty Name="ssc_doc" ColumnName="ssc_doc" />
+          <ScalarProperty Name="ssc_fk_ap_id" ColumnName="ssc_fk_ap_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
